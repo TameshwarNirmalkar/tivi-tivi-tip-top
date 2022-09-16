@@ -71,7 +71,8 @@ const HomeContainer = (): JSX.Element => {
             </div>
             <div className="col-12">
               <div className="txtfnt animate__animated animate__flash animate__repeat-3">
-                Tipi tipi tip top, which color do you want ?
+                <div>Tipi tipi tip top!!!</div>
+                <div>Which color do you want ?</div>
               </div>
             </div>
           </div>
@@ -96,7 +97,8 @@ const HomeContainer = (): JSX.Element => {
               <div
                 className="txtfnt animate__animated animate__flash animate__repeat-3"
                 style={{ color: clr }}>
-                Tipi tipi tip top, which number do you want ?
+                <div>Tipi tipi tip top!!!</div>
+                <div>Which number do you want ?</div>
               </div>
             </div>
           </div>
