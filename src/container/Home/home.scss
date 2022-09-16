@@ -1,0 +1,26 @@
+.square-grid {
+  display: grid;
+  /* grid-template-columns: 120px 1fr; */
+  grid-template-columns: repeat(4, 100px);
+  column-gap: 16px;
+  row-gap: 16px;
+}
+
+.callout {
+  grid-area: callout;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  .callout-title {
+    margin-bottom: 0;
+    animation-delay: 0.25s;
+    font-size: 4rem;
+    // font-size: calc(min(14vw, 4rem));
+    font-family: 'Bungee Spice', cursive;
+  }
+}
+
+.txtfnt {
+  font-size: 3rem;
+  font-family: 'Ultra', serif;
+}
