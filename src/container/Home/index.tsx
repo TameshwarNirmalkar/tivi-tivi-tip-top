@@ -16,7 +16,7 @@ const answerList: any = {
 
 const HomeContainer = (): JSX.Element => {
   const [clr, setClr] = useState('');
-  // const [nmb, setNmb] = useState(0);
+  const [nmb, setNmb] = useState(0);
   const [clrList, setClrList] = useState<string[]>([]);
   const [resetGame, setResetGame] = useState<boolean>(false);
 
@@ -25,7 +25,7 @@ const HomeContainer = (): JSX.Element => {
   };
 
   const onNumberChange = (e: number): void => {
-    // setNmb(e);
+    setNmb(e);
     Modal.info({
       icon: '',
       title: <div className="txtfnt">YOU ARE A</div>,
@@ -41,7 +41,7 @@ const HomeContainer = (): JSX.Element => {
       onOk() {
         setResetGame(!resetGame);
         setClr('');
-        // setNmb(0);
+        setNmb(0);
       },
     });
   };
@@ -56,28 +56,30 @@ const HomeContainer = (): JSX.Element => {
   return (
     <>
       <div className="container mt-3">
-        <div className="row">
-          <div className="col-5">
-            <div className="square-grid">
-              {clrList.map((el: string) => (
-                <div
-                  onClick={() => onColorDivClick(el)}
-                  key={el}
-                  role="button"
-                  style={{ backgroundColor: el, width: 100, padding: 50 }}></div>
-              ))}
-            </div>
-          </div>
-          <div className="col-7">
-            <div className="txtfnt animate__animated animate__flash animate__repeat-3">
-              Tipi tipi tip top, which color do you want ?
-            </div>
-          </div>
-        </div>
-        <Divider />
-        {clr && (
+        {!clr && (
           <div className="row">
-            <div className="col-5">
+            <div className="col-12">
+              <div className="square-grid">
+                {clrList.map((el: string) => (
+                  <div
+                    onClick={() => onColorDivClick(el)}
+                    key={el}
+                    role="button"
+                    style={{ backgroundColor: el, width: 100, padding: 50 }}></div>
+                ))}
+              </div>
+            </div>
+            <div className="col-12">
+              <div className="txtfnt animate__animated animate__flash animate__repeat-3">
+                Tipi tipi tip top, which color do you want ?
+              </div>
+            </div>
+          </div>
+        )}
+        <Divider />
+        {clr && !nmb && (
+          <div className="row">
+            <div className="col-12">
               <div className="square-grid">
                 {clrList.map((el: string, i: number) => (
                   <div
@@ -90,7 +92,7 @@ const HomeContainer = (): JSX.Element => {
                 ))}
               </div>
             </div>
-            <div className="col-7">
+            <div className="col-12">
               <div
                 className="txtfnt animate__animated animate__flash animate__repeat-3"
                 style={{ color: clr }}>
