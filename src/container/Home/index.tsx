@@ -28,12 +28,13 @@ const HomeContainer = (): JSX.Element => {
     // setNmb(e);
     Modal.info({
       icon: '',
-      title: 'YOU ARE A',
+      title: <div className="txtfnt">YOU ARE A</div>,
       okText: 'Next Chance',
+      maskStyle: { backgroundColor: 'black' },
+      centered: true,
       content: (
-        <div
-          className="callout"
-          style={{ height: 130 }}>
+        <div className="callout">
+          <img src={`./assets/images/${answerList[e]}.jpg`} />
           <h1 className="callout-title animate__animated animate__flip">{answerList[e]}</h1>
         </div>
       ),
@@ -54,7 +55,7 @@ const HomeContainer = (): JSX.Element => {
   }, [resetGame]);
   return (
     <>
-      <div className="container">
+      <div className="container mt-3">
         <div className="row">
           <div className="col-5">
             <div className="square-grid">
